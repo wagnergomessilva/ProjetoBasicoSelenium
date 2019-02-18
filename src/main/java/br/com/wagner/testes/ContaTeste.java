@@ -7,6 +7,7 @@ import br.com.wagner.core.BaseTeste;
 import br.com.wagner.pages.ContasPage;
 import br.com.wagner.pages.MenuPage;
 
+//comentário para teste commit
 public class ContaTeste extends BaseTeste {
 	
 	MenuPage menuPage = new MenuPage();
