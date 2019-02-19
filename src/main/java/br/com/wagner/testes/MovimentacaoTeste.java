@@ -7,20 +7,24 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import br.com.wagner.core.BaseTeste;
+import br.com.wagner.core.Propriedades;
 import br.com.wagner.pages.MenuPage;
 import br.com.wagner.pages.MovimentacaoPage;
 import utils.DataUtils;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTeste extends BaseTeste{
 	
 	private MenuPage menuPage = new MenuPage();
 	private MovimentacaoPage movPage = new MovimentacaoPage();
 	
 	@Test
-	public void testeInserirMovimentacao() {
+	public void teste1_InserirMovimentacao() {
 		
 		menuPage.acessarTelaInserirMovimentacao();
 		
@@ -29,7 +33,7 @@ public class MovimentacaoTeste extends BaseTeste{
 		movPage.setDescricao("Movimentação do Teste");
 		movPage.setInteressado("Interessado qualquer");
 		movPage.setValor("500");
-		movPage.setConta("Conta do Teste alterada");
+		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
 		movPage.setStatusPago();
 		movPage.salvar();
 		
@@ -37,7 +41,7 @@ public class MovimentacaoTeste extends BaseTeste{
 	}
 	
 	@Test
-	public void testeCamposObrigatoris() {
+	public void teste2_CamposObrigatoris() {
 		menuPage.acessarTelaInserirMovimentacao();
 		movPage.salvar();
 		List<String> errosMovimentacao = movPage.obterErrosMovimentacao();
@@ -54,7 +58,7 @@ public class MovimentacaoTeste extends BaseTeste{
 	}
 	
 	@Test
-	public void inserirMovimentacaoFutura() {
+	public void teste3_inserirMovimentacaoFutura() {
 		menuPage.acessarTelaInserirMovimentacao();
 		
 		Date dataFutura = DataUtils.obterDataComDiferencaDias(5);
@@ -64,7 +68,7 @@ public class MovimentacaoTeste extends BaseTeste{
 		movPage.setDescricao("Movimentação do Teste");
 		movPage.setInteressado("Interessado qualquer");
 		movPage.setValor("500");
-		movPage.setConta("Conta do Teste alterada");
+		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
 		movPage.setStatusPago();
 		movPage.salvar();
 		
