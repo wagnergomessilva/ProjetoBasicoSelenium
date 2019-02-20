@@ -16,7 +16,7 @@
   					<include>br/com/wagner/suites/*.java</include>
   				</includes>
   				<parallel>all</parallel>
-  				<threadCount>3</threadCount>
+  				<threadCount>3</threadCount> 
   			</configuration>
   		</plugin>
   	</plugins>
