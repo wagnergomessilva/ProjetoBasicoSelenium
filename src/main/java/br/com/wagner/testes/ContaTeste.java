@@ -31,7 +31,7 @@ public class ContaTeste extends BaseTeste {
 		menuPage.acessarTelaListarConta();
 		
 		contasPage.clicarAlterarConta(Propriedades.NOME_CONTA_ALTERADA);
-		contasPage.setNome("Conta do Teste alterada");
+		contasPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
 		contasPage.salvar();
 		Assert.assertEquals("Conta alterada com sucesso!", contasPage.obterMensagemSucesso());
 	}

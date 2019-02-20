@@ -2,10 +2,14 @@ package br.com.wagner.testes;
 
 import static br.com.wagner.core.DriverFactory.getDriver;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import br.com.wagner.core.BaseTeste;
 import br.com.wagner.pages.MenuPage;
@@ -28,5 +32,10 @@ public class ResumoTeste extends BaseTeste {
 	public void teste2_ResumoMensal() {
 		menuPage.acessarTelaResumoMensal();		
 		Assert.assertEquals("Seu Barriga - Extrato", getDriver().getTitle());
+		
+		List<WebElement> elementosEncontrados = 
+			getDriver().findElements(By.xpath("//*[@id='tabelaExtrato']/tbody/tr"));
+		
+		Assert.assertEquals(0, elementosEncontrados.size());
 	}
 }
