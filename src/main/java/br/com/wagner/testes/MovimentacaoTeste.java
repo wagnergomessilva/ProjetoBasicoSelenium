@@ -7,17 +7,13 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
 import br.com.wagner.core.BaseTeste;
-import br.com.wagner.core.Propriedades;
 import br.com.wagner.pages.MenuPage;
 import br.com.wagner.pages.MovimentacaoPage;
 import utils.DataUtils;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTeste extends BaseTeste{
 	
 	private MenuPage menuPage = new MenuPage();
@@ -33,7 +29,7 @@ public class MovimentacaoTeste extends BaseTeste{
 		movPage.setDescricao("Movimentação do Teste");
 		movPage.setInteressado("Interessado qualquer");
 		movPage.setValor("500");
-		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
+		movPage.setConta("Conta para movimentacoes");
 		movPage.setStatusPago();
 		movPage.salvar();
 		
@@ -68,7 +64,7 @@ public class MovimentacaoTeste extends BaseTeste{
 		movPage.setDescricao("Movimentação do Teste");
 		movPage.setInteressado("Interessado qualquer");
 		movPage.setValor("500");
-		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
+		movPage.setConta("Conta para movimentacoes");
 		movPage.setStatusPago();
 		movPage.salvar();
 		

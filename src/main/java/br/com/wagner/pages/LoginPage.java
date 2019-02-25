@@ -2,8 +2,6 @@ package br.com.wagner.pages;
 
 import static br.com.wagner.core.DriverFactory.getDriver;
 
-import org.openqa.selenium.By;
-
 import br.com.wagner.core.BasePage;
 
 public class LoginPage extends BasePage {
@@ -21,5 +19,9 @@ public class LoginPage extends BasePage {
 	
 	public void entrar() {
 		clicarBotaoPorTexto("Entrar");
+	}
+	
+	public void resetarDados() {
+		clicarLink("reset");
 	}
 }

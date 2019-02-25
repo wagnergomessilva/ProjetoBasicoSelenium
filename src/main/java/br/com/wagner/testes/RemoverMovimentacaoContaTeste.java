@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.com.wagner.core.BaseTeste;
-import br.com.wagner.core.Propriedades;
 import br.com.wagner.pages.ContasPage;
 import br.com.wagner.pages.MenuPage;
 
@@ -18,7 +17,7 @@ public class RemoverMovimentacaoContaTeste extends BaseTeste {
 		
 		menuPage.acessarTelaListarConta();
 		
-		contasPage.clicarexcluirConta(Propriedades.NOME_CONTA_ALTERADA);
+		contasPage.clicarexcluirConta("Conta com movimentacao");
 		Assert.assertEquals("Conta em uso na movimentações", contasPage.obterMensagemErro());
 	}
 }

@@ -5,9 +5,7 @@ import static br.com.wagner.core.DriverFactory.getDriver;
 import java.util.List;
 
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -15,7 +13,6 @@ import br.com.wagner.core.BaseTeste;
 import br.com.wagner.pages.MenuPage;
 import br.com.wagner.pages.ResumoPage;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ResumoTeste extends BaseTeste {
 	
 	private MenuPage menuPage = new MenuPage();
@@ -37,5 +34,7 @@ public class ResumoTeste extends BaseTeste {
 			getDriver().findElements(By.xpath("//*[@id='tabelaExtrato']/tbody/tr"));
 		
 		Assert.assertEquals(0, elementosEncontrados.size());
+		resumoPage.selecionarAno("2016");
+		resumoPage.botaoBuscar();
 	}
 }
